@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href="/favicon.ico.ico">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <title>Cotação 520 Corretora de Seguros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+textarea {
+    width: 100%;
+    margin-top: 2em;
+}
+
+select {
+    padding: 1em;
+    margin-top: 12px;
+}
+main.container {
+    background: white;
+    width: 800px;
+    height: 500px;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+main h2::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    position: relative;
+}
+
+form .input-field:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.input-field .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.input-field .underline::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+
+.input-field input:focus ~ .underline::after {
+    transform: scaleX(1);
+}
+
+.input-field input {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+.input-field input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form input[type="button"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #4776E6, #8e54e9);
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+form input[type="button"]:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+@media screen and (max-width: 768px) {
+    main.container {
+        width: 400px;
+        height: 500px;
+    }
+   
+}
+
+    </style>
+   
+</head>
+<body>
+
+    
+
+    <main class="container">
+        <h2>Cotação</h2>
+        <form action="">
+            <div class="input-field">
+                <input id="name" type="text"
+                    placeholder="Nome:" autocomplete="off">
+                <div class="underline"></div>
+            </div>
+            <div class="input-field">
+                <input id="ageUser" type="number"
+                    placeholder="Idade:" autocomplete="off">
+                    
+                <div class="underline"></div>
+            </div>
+
+            <select name="select" id="select">
+                <option value="1">Tabela Adesão Amil PME</option>
+                <option value="2">Tabela Adesão HapVida</option>
+                <option value="3">Tabela Adesão Empresarial</option>
+                <option value="4">Tabela Adesão Ambulatorial</option>
+                <option value="5">Tabela Adesão Completa</option>
+                <option value="6">UniVida</option>
+                <option value="7">MedSênior DF1</option>
+              </select>
+
+            <input onclick="calculate()" type="button" value="Gerar">
+            <textarea name="" id="text_area" rows="8"></textarea>
+        </form>
+
+    <script>
+        function calculate(){
+    let age = document.getElementById("ageUser").value
+    let name = document.getElementById("name").value
+    let sel = document.getElementById("select").value
+
+    switch(sel) {
+        case '1':
+
+            if(age >= 0 && age <= 18){
+                text=" Amil Fácil S80 QC - R$ 262,59 Amil Fácil S80 QP - R$ 283,61 / Amil S380 QC - R$ 314,55 Amil S380 QP - R$ 336,55 / Amil S450 QC - R$ 352,28 Amil S450 QP - R$ 376,96 / Amil S580 QP - R$ 387,57 / Amil S750 R1 QP - R$ 413,07 Amil S750 R2 QP - R$ 417,17 Amil S750 R3 QP - R$ 450,55"
+            } else if (age >= 19 && age <= 23){
+                text=" Amil Fácil S80 QC - R$ 307,23 Amil Fácil S80 QP - R$ 331,82 / Amil S380 QC - R$ 368,02 Amil S380 QP - R$ 393,76 / Amil S450 QC - R$ 412,17 Amil S450 QP - R$ 453,46 / Amil S580 QP - R$ 441,04 / Amil S750 R1 QP - R$ 483,29 Amil S750 R2 QP - R$ 488,09 Amil S750 R3 QP - R$ 527,14"
+            } else if (age >= 24 && age <= 28){
+                text=" Amil Fácil S80 QC - R$ 374,82 Amil Fácil S80 QP - R$ 404,82 / Amil S380 QC - R$ 448,98 Amil S380 QP - R$ 480,39 / Amil S450 QC - R$ 502,85 Amil S450 QP - R$ 553,22 / Amil S580 QP - R$ 538,07 / Amil S750 R1 QP - R$ 589,61 Amil S750 R2 QP - R$ 595,47 Amil S750 R3 QP - R$ 643,11"
+            } else if (age >= 29 && age <= 33){
+                text=" Amil Fácil S80 QC - R$ 449,78 Amil Fácil S80 QP - R$ 485,78 / Amil S380 QC - R$ 538,78 Amil S380 QP - R$ 576,47 / Amil S450 QC - R$ 603,42 Amil S450 QP - R$ 663,86 / Amil S580 QP - R$ 645,68 / Amil S750 R1 QP - R$ 707,53 Amil S750 R2 QP - R$ 714,56 Amil S750 R3 QP - R$ 771,73"
+            } else if (age >= 34 && age <= 38){
+                text=" Amil Fácil S80 QC - R$ 472,27 Amil Fácil S80 QP - R$ 510,07 / Amil S380 QC - R$ 565,72 Amil S380 QP - R$ 605,29 / Amil S450 QC - R$ 633,59 Amil S450 QP - R$ 697,05 / Amil S580 QP - R$ 677,96 / Amil S750 R1 QP - R$ 742,91 Amil S750 R2 QP - R$ 750,29 Amil S750 R3 QP - R$ 810,32"
+            } else if (age >= 39 && age <= 43){
+                text=" Amil Fácil S80 QC - R$ 519,50 Amil Fácil S80 QP - R$ 561,08 / Amil S380 QC - R$ 622,29 Amil S380 QP - R$ 665,82 / Amil S450 QC - R$ 696,95 Amil S450 QP - R$ 766,76 / Amil S580 QP - R$ 745,76 / Amil S750 R1 QP - R$ 817,20 Amil S750 R2 QP - R$ 825,32 Amil S750 R3 QP - R$ 891,35"
+            } else if (age >= 44 && age <= 48){
+                text=" Amil Fácil S80 QC - R$ 649,38 Amil Fácil S80 QP - R$ 701,35 / Amil S380 QC - R$ 777,86 Amil S380 QP - R$ 832,28 / Amil S450 QC - R$ 871,19  Amil S450 QP - R$ 958,45 / Amil S580 QP - R$ 932,20 / Amil S750 R1 QP - R$ 1.021,50 Amil S750 R2 QP - R$ 1031,65 Amil S750 R3 QP - R$ 1.114,19"
+            } else if (age >= 49 && age <= 53){
+                text=" Amil Fácil S80 QC - R$ 714,32 Amil Fácil S80 QP - R$ 771,49 / Amil S380 QC - R$ 855,65 Amil S380 QP - R$ 915,51 / Amil S450 QC - R$ 958,31 Amil S450 QP - R$ 1.054,30 / Amil S580 QP - R$ 1.025,42 / Amil S750 R1 QP - R$ 1.123,65 Amil S750 R2 QP - R$ 1134,82 Amil S750 R3 QP - R$ 1.225,61"
+            } else if (age >= 54 && age <= 58){
+                text=" Amil Fácil S80 QC - R$ 892,90 Amil Fácil S80 QP - R$ 964,36 / Amil S380 QC - R$ 1.069,56 Amil S380 QP - R$ 1.144,39 / Amil S450 QC - R$ 1.197,89 Amil S450 QP - R$ 1.317,88 / Amil S580 QP - R$ 1.281,78 / Amil S750 R1 QP - R$ 1.404,56 Amil S750 R2 QP - R$ 1.418,53 Amil S750 R3 QP - R$ 1.532,01"
+            } else if (age <= 59 ){R$ 
+                text=" Amil Fácil S80 QC - R$ 1.562,58 Amil Fácil S80 QP - R$ 1.687,63 / Amil S380 QC - R$ 1.871,73 Amil S380 QP - R$ 2.002,68 / Amil S450 QC - R$ 2.096,31 Amil S450 QP - R$ 2.306,29 / Amil S580 QP - R$ 2.243,12 / Amil S750 R1 QP - R$ 2.457,98 Amil S750 R2 QP - R$ 2482,43 Amil S750 R3 QP - R$ 2.681,02"
+            }
+        
+            
+            break;
+
+        case '2':
+            
+        if(age >= 0 && age <= 18){
+            text=" ENFERMARIA - Saúde + Odonto R$184,63 - Saúde R$185,63 / APARTAMENTO -  Saúde + Odonto R$266,85 - Saúde R$267,85"
+        } else if (age >= 19 && age <= 23){
+            text=" ENFERMARIA - Saúde + Odonto R$237,24 - Saúde R$245,03 / APARTAMENTO -  Saúde + Odonto R$345,77  - Saúde R$353,56"
+        } else if (age >= 24 && age <= 28){
+            text=" ENFERMARIA - Saúde + Odonto R$269,79 - Saúde R$281,78 / APARTAMENTO -  Saúde + Odonto R$394,60 - Saúde R$406,59"
+        } else if (age >= 29 && age <= 33){
+            text=" ENFERMARIA - Saúde + Odonto R$299,74 - Saúde R$315,59 / APARTAMENTO -  Saúde + Odonto R$439,53  - Saúde R$455,38"
+        } else if (age >= 34 && age <= 38){
+            text=" ENFERMARIA - Saúde + Odonto R$313,72 - Saúde R$331,37 / APARTAMENTO -  Saúde + Odonto R$460,50  - Saúde R$478,15"
+        } else if (age >= 39 && age <= 43){
+            text=" ENFERMARIA - Saúde + Odonto R$351,88 - Saúde R$374,45 / APARTAMENTO -  Saúde + Odonto R$517,74 - Saúde R$540,31"
+        } else if (age >= 44 && age <= 48){
+            text=" ENFERMARIA - Saúde + Odonto R$424,85 - Saúde R$456,83  / APARTAMENTO -  Saúde + Odonto R$627,20 - Saúde R$659,18"
+        } else if (age >= 49 && age <= 53){
+            text=" ENFERMARIA - Saúde + Odonto R$578,61 - Saúde R$630,43  / APARTAMENTO -  Saúde + Odonto R$857,86 - Saúde R$909,67"
+        } else if (age >= 54 && age <= 58){
+            text=" ENFERMARIA - Saúde + Odonto R$774,05 - Saúde R$851,08  / APARTAMENTO -  Saúde + Odonto R$1.151,04 - Saúde R$1.228,05"
+        } else if (age <= 59 ){
+            text=" ENFERMARIA - Saúde + Odonto R$1.000,20 - Saúde R$1.106,40 / APARTAMENTO -  Saúde + Odonto R$1.490,29 - Saúde R$1.596,47"
+        }
+        break;
+
+        case '3':
+
+        if(age >= 0 && age <= 18){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 230,29 - MASTER GREEN DF/AS APARTAMENTO R$ 270,39 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ R$ 202,53 - MASTER GREEN DF/AS APARTAMENTO R$ R$ 239,51"
+        } else if (age >= 19 && age <= 23){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARI R$ 245,99 - MASTER GREEN DF/AS APARTAMENTO R$ 288,83 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 216,35 - MASTER GREEN DF/AS APARTAMENTO R$ 255,84"
+        } else if (age >= 24 && age <= 28){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 267,79 - MASTER GREEN DF/AS APARTAMENTO R$ 314,41 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 235,51 - MASTER GREEN DF/AS APARTAMENTO R$ 278,52"
+        } else if (age >= 29 && age <= 33){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 314,55 - MASTER GREEN DF/AS APARTAMENTO R$ 369,31 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 276,64 - MASTER GREEN DF/AS APARTAMENTO R$ 327,15"
+        } else if (age >= 34 && age <= 38){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 378,56 - MASTER GREEN DF/AS APARTAMENTO R$ 444,47 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 332,93  - MASTER GREEN DF/AS APARTAMENTO R$ 393,73"
+        } else if (age >= 39 && age <= 43){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 427,95 - MASTER GREEN DF/AS APARTAMENTO R$ 502,48 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 376,38 - MASTER GREEN DF/AS APARTAMENTO R$ 445,11"
+        } else if (age >= 44 && age <= 48){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 522,24 - MASTER GREEN DF/AS APARTAMENTO R$ 613,17 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 459,29 - MASTER GREEN DF/AS APARTAMENTO R$ 543,17"
+        } else if (age >= 49 && age <= 53){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 640,95 - MASTER GREEN DF/AS APARTAMENTO R$ 752,53 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 563,69 - MASTER GREEN DF/AS APARTAMENTO R$ 666,63"
+        } else if (age >= 54 && age <= 58){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 861,56 - MASTER GREEN DF/AS APARTAMENTO R$ 1.011,55 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 757,71 - MASTER GREEN DF/AS APARTAMENTO R$ 896,09"
+        } else if (age <= 59 ){
+            text=" SEM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 1.143,89 - MASTER GREEN DF/AS APARTAMENTO R$ 1.343,05 / COM COPARTICIPAÇÃO: MASTER GREEN ES ENFERMARIA R$ 1.006,02 - MASTER GREEN DF/AS APARTAMENTO R$ 1.189,73"
+        }
+        break;
+
+        case '4':
+
+        if(age >= 0 && age <= 18){
+            text=" PRO SAUDE PLATINUM: R$ 178,17 / GOLD PLUS MAIS:  R$ 226,21"
+        } else if (age >= 19 && age <= 23){
+            text=" PRO SAUDE PLATINUM: R$ 190,31 / GOLD PLUS MAIS:  R$ 241,64"
+        } else if (age >= 24 && age <= 28){
+            text=" PRO SAUDE PLATINUM: R$ 207,17 / GOLD PLUS MAIS:  R$ 263,05"
+        } else if (age >= 29 && age <= 33){
+            text=" PRO SAUDE PLATINUM: R$ 243,35 / GOLD PLUS MAIS:  R$ 308,97"
+        } else if (age >= 34 && age <= 38){
+            text=" PRO SAUDE PLATINUM: R$ 292,87 / GOLD PLUS MAIS:  R$ 371,86"
+        } else if (age >= 39 && age <= 43){
+            text=" PRO SAUDE PLATINUM: R$ 331,11 / GOLD PLUS MAIS: R$ 420,38"
+        } else if (age >= 44 && age <= 48){
+            text=" PRO SAUDE PLATINUM: R$ 404,05 / GOLD PLUS MAIS: R$ 512,99"
+        } else if (age >= 49 && age <= 53){
+            text=" PRO SAUDE PLATINUM: R$ 495,90 / GOLD PLUS MAIS: R$ 629,60"
+        } else if (age >= 54 && age <= 58){
+            text=" PRO SAUDE PLATINUM: R$ 666,59 / GOLD PLUS MAIS: R$ 846,28"
+        } else if (age <= 59 ){
+            text=" PRO SAUDE PLATINUM: R$ 885,05 / GOLD PLUS MAIS: R$ 1.123,62"
+        }
+        break;
+
+        case '5':
+
+        if(age >= 0 && age <= 18){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 294,25 / MASTER GOLD DF - AS APARTAMENTO:  R$ 325,05"
+        } else if (age >= 19 && age <= 23){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 314,32 / MASTER GOLD DF - AS APARTAMENTO:  R$ 347,23"
+        } else if (age >= 24 && age <= 28){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 342,16 / MASTER GOLD DF - AS APARTAMENTO:  R$ 377,99"
+        } else if (age >= 29 && age <= 33){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 401,90 / MASTER GOLD DF - AS APARTAMENTO:  R$ 443,99"
+        } else if (age >= 34 && age <= 38){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 483,69 / MASTER GOLD DF - AS APARTAMENTO:  R$ 534,34"
+        } else if (age >= 39 && age <= 43){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 546,81 / MASTER GOLD DF - AS APARTAMENTO:  R$ 604,07"
+        } else if (age >= 44 && age <= 48){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 667,28 / MASTER GOLD DF - AS APARTAMENTO:  R$ 737,14"
+        } else if (age >= 49 && age <= 53){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 818,95 / MASTER GOLD DF - AS APARTAMENTO:  R$ 904,70"
+        } else if (age >= 54 && age <= 58){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 1.100,83 / MASTER GOLD DF - AS APARTAMENTO:  R$ 1.216,09"
+        } else if (age <= 59 ){
+            text=" MASTER GOLD ES ENFERMARIA: R$ 1.461,57 / MASTER GOLD DF - AS APARTAMENTO:  R$ 1.614,62"
+        }
+        break;
+
+        case '6':
+
+        if (age >= 0 && age <= 18){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 158,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 235,75 / UNIVIDA  MASTER (APARTAMENTO): R$ 497,39"
+        } else if (age >= 19 && age <= 23){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 196,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 275,12 / UNIVIDA  MASTER (APARTAMENTO): R$ 621,36"
+        } else if (age >= 24 && age <= 28){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 240,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 321,06 / UNIVIDA  MASTER (APARTAMENTO): R$ 727,62"
+        } else if (age >= 29 && age <= 33){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 261,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 353,81 / UNIVIDA  MASTER (APARTAMENTO): R$ 887,69"
+        } else if (age >= 34 && age <= 38){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 284,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 412,89 / UNIVIDA  MASTER (APARTAMENTO): R$ 996,88"
+        } else if (age >= 39 && age <= 43){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 348,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 471,94 / UNIVIDA  MASTER (APARTAMENTO): R$ 1.026,79"
+        } else if (age >= 44 && age <= 48){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 458,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 578,13 / UNIVIDA  MASTER (APARTAMENTO): R$ 1.191,08"
+        } else if (age >= 49 && age <= 53){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 533,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 720,93 / UNIVIDA  MASTER (APARTAMENTO): R$ 1.386,84"
+        } else if (age >= 54 && age <= 58){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 630,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 956,67 / UNIVIDA  MASTER (APARTAMENTO): R$ 1.651,84"
+        } else if (age <= 59 ){
+            text=" UNIVIDA PRIME (ENFERMARIA): R$ 767,00 / UNIVIDA PRIME ADESÃO (APARTAMENTO):  R$ 1.414,44 / UNIVIDA  MASTER (APARTAMENTO): R$ 2.841,74"
+        }
+        break;
+
+        case '7':
+
+       if (age >= 49 && age <= 53){
+            text=" MedSênior DF1 - R$822,17(R$750,69) / MedSênior DF2 - R$979,14(R$885,48)"
+        } else if (age >= 54 && age <= 58){
+            text=" MedSênior DF1 - R$904,41(R$904,41) / MedSênior DF2 - R$1.077,04(R$974,03)"
+        } else if (age <= 59 ){
+            text=" MedSênior DF1 - R$1.293,29(R$1.180,84) / MedSênior DF2 - R$1.540,18(R$1.392,86)"
+        }
+        break;
+
+        
+    }
+
+    document.getElementById("text_area").innerText=name + text
+    
+}
+    </script>
+</body>
+</html>
